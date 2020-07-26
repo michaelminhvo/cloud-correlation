@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
-def helloWorld(request):
+def hello_world(request):
     if request.method == 'POST':
         df = pd.read_csv(request.files.get('file'))
         correlation = df.corr(method='pearson')
